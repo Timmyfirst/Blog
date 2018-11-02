@@ -1,0 +1,29 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-12"  id="intro-image">
+      <img [src]="urlImg" class="img-fluid">
+      <!--<img src="https://firebasestorage.googleapis.com/v0/b/blog-78134.appspot.com/o/Resources%2FImages%2FTemplate%2Fimg_kids_2.jpg?alt=media&token=07d5efab-938f-4ae3-8d20-51b45d0a6064" class="img-fluid">-->
+    </div>
+  </div>
+  <div class="row navbar navbar-light" style="background-color: #e3f2fd;">
+    <div class="col">
+      <button class="btn btn-block" routerLinkActive="active" routerLink="posts">Accueil</button>
+    </div>
+    <div class="col">
+      <button class="btn btn-block" routerLinkActive="active" routerLink="posts">Archives</button>
+    </div>
+    <div class="col">
+      <button class="btn btn-block" routerLinkActive="active" routerLink="about">À propos</button>
+    </div>
+    <div class="col">
+      <div ngbDropdown class="d-inline-block">
+        <button class="btn btn-block" id="dropdownBasic1" ngbDropdownToggle><fa-icon [icon]="faUserAlt" routerLinkActive="active" *ngIf="isAuth"></fa-icon> Mon compte</button>
+        <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+          <button class="dropdown-item" routerLink="" *ngIf="isAuth">Mon compte</button>
+          <button class="dropdown-item" routerLink="administration" *ngIf="isAuth">Administration</button>
+          <button class="dropdown-item" *ngIf="isAuth" (click)="onSignOut()" style="cursor:pointer">Se déconnecter</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
